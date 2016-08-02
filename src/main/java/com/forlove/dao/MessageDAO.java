@@ -9,18 +9,20 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.forlove.db.DBAccess;
 import com.forlove.model.Message;
 
 public class MessageDAO {
 	public List<Message> queryMessageList(String command, String description) {
 		List<Message> messageList = new ArrayList<Message>();
+		DBAccess dbAccess = new DBAccess();
+		
 		try {
-			Reader reader = Resources.getResourceAsReader("com/forlove/config/config.xml");
-			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-			SqlSession sqlSession = sqlSessionFactory.openSession();
 			Message message = new Message();
 			message.setCommand(command);
 			message.setDescription(description);
+			
+			SqlSession sqlSession = dbAccess.getSqlSession();
 			messageList = sqlSession.selectList("Message.queryMessageList", message);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
