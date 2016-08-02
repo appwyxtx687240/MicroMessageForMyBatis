@@ -7,9 +7,20 @@
 		<servlet-name>ListServlet</servlet-name>
 		<servlet-class>com.forlove.servlet.ListServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteOneServlet</display-name>
+		<servlet-name>DeleteOneServlet</servlet-name>
+		<servlet-class>com.forlove.servlet.DeleteOneServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ListServlet</servlet-name>
 		<url-pattern>/ListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteOneServlet</servlet-name>
+		<url-pattern>/DeleteOneServlet</url-pattern>
 	</servlet-mapping>
 	<filter>
 		<description>

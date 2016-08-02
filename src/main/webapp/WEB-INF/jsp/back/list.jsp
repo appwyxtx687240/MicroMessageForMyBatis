@@ -6,7 +6,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 request.setCharacterEncoding("utf-8");
 %>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://ww
+w.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="X-UA-Compatible"content="IE=9; IE=8; IE=7; IE=EDGE" />
@@ -56,7 +57,7 @@ request.setCharacterEncoding("utf-8");
 										<td>${message.description}</td>
 										<td>
 											<a href="#">修改</a>&nbsp;&nbsp;&nbsp;
-											<a href="${basePath}DeleteOneServlet.action?id=${message.id}">删除</a>
+											<a href="${basePath}DeleteOneServlet?id=${message.id}">删除</a>
 										</td>
 									</tr>
 								</c:forEach>
