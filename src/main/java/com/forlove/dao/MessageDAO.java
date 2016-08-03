@@ -38,4 +38,16 @@ public class MessageDAO {
 			e.printStackTrace();
 		}
 	}
+	public void deleteBatch(List<String> ids) {
+		DBAccess dbAccess = new DBAccess();
+		
+		try {
+			SqlSession sqlSession = dbAccess.getSqlSession();
+			sqlSession.delete("Message.deleteBatch", ids);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

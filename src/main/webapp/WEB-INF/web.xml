@@ -14,6 +14,13 @@
 		<servlet-name>DeleteOneServlet</servlet-name>
 		<servlet-class>com.forlove.servlet.DeleteOneServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteBatchServlet</display-name>
+		<servlet-name>DeleteBatchServlet</servlet-name>
+		<servlet-class>com.forlove.servlet.DeleteBatchServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ListServlet</servlet-name>
 		<url-pattern>/ListServlet</url-pattern>
@@ -21,6 +28,10 @@
 	<servlet-mapping>
 		<servlet-name>DeleteOneServlet</servlet-name>
 		<url-pattern>/DeleteOneServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteBatchServlet</servlet-name>
+		<url-pattern>/DeleteBatchServlet</url-pattern>
 	</servlet-mapping>
 	<filter>
 		<description>

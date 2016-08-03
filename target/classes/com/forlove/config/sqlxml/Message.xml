@@ -19,7 +19,14 @@
 		</where>
 	</select>
 	<delete id="deleteOne" parameterType="String">
-		delete from message where id=#{id}
+		delete from message where ID=#{id}
+	</delete>
+	<delete id="deleteBatch" parameterType="java.util.List">
+		delete from message where ID in (
+			<foreach collection="list" item="item" separator=",">
+				#{item}
+			</foreach>
+		)
 	</delete>
 
 </mapper>
